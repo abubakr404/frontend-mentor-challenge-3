@@ -1,0 +1,48 @@
+:root {
+    --White: hsl(0, 0%, 100%);
+    --Light-gray: hsl(212, 45%, 89%);
+    --Grayish-blue: hsl(220, 15%, 55%);
+    --Dark-blue: hsl(218, 44%, 22%);
+}
+*, :active, :focus {
+    outline: none!important;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Overpass', sans-serif;
+    line-height: 1.2;
+    text-align: center;
+    color: var(--Dark-blue);
+    margin: 0px;
+    background-color: var(--Light-gray);
+    position: relative;
+    height: 100vh;
+}
+.QR-card {
+    background-color: var(--White);
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    width: 320px;
+    padding: 15px;
+    border-radius: 20px;
+    transform: translate(50%, -50%);
+}
+img {
+    width: 100%;
+    border-radius: 15px;
+}
+.QR-details {
+    padding: 15px;
+}
+.title {
+    margin: 0 0 15px 0;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+.detail {
+    color: var(--Grayish-blue);
+    font-size: 15px;
+}
