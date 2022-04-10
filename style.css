@@ -1,8 +1,11 @@
 :root {
     --White: hsl(0, 0%, 100%);
-    --Light-gray: hsl(212, 45%, 89%);
-    --Grayish-blue: hsl(220, 15%, 55%);
-    --Dark-blue: hsl(218, 44%, 22%);
+    --line: hsl(215, 32%, 27%);
+    --card-BG: hsl(216, 50%, 16%);
+    --main-BG: hsl(217, 54%, 11%);
+    --main-CR: hsl(215deg 51% 70%);
+    --second-CR: hsl(178, 100%, 50%);
+    --card-width: 325px
 }
 *, :active, :focus {
     outline: none!important;
@@ -11,38 +14,115 @@
     box-sizing: border-box;
 }
 body {
-    font-family: 'Overpass', sans-serif;
-    line-height: 1.2;
-    text-align: center;
-    color: var(--Dark-blue);
+    font-family: 'Outfit', sans-serif;
+    line-height: 1.5;
+    color: var(--main-CR);
     margin: 0px;
-    background-color: var(--Light-gray);
+    background-color: var(--main-BG);
     position: relative;
     height: 100vh;
 }
-.QR-card {
-    background-color: var(--White);
+.NTF-card {
+    background-color: var(--card-BG);
     position: absolute;
     top: 50%;
     right: 50%;
-    width: 320px;
-    padding: 15px;
-    border-radius: 20px;
-    transform: translate(50%, -50%);
-}
-img {
-    width: 100%;
+    width: var(--card-width);
+    padding: 20px;
     border-radius: 15px;
+    transform: translate(50%, -50%);
+    box-shadow: 0px 40px 0px 15px #0c1729, 0px 30px 0px 50px #0b182b;
 }
-.QR-details {
-    padding: 15px;
+.NTF-img {
+    position: relative;
+}
+.NTF-img>img {
+    width: 100%;
+    border-radius: 10px;
+}
+.view {
+    position: absolute;
+    background-color: hsl(178deg 100% 50% / 70%);
+    top: 0;
+    width: 20%;
+    opacity: 0;
+    height: calc(var(--card-width) - 40px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+.NTF-img .view img{
+    width: 0%;
+}
+.NTF-img:hover .view img{
+    width: fit-content;
+}
+.NTF-img:hover .view{
+    opacity: 1;
+    width: 100%;
+}
+.view:hover,
+.name:hover,
+.title:hover {
+    color: var(--second-CR);
+}
+.view,
+.name,
+.title {
+    cursor: pointer;
+    transition: .4s ease-in-out;
 }
 .title {
-    margin: 0 0 15px 0;
+    margin: 15px 0;
     font-weight: bold;
-    font-size: 1.3em;
+    font-size: 18px;
+    color: var(--White);
+}
+.tools>div,
+.tools {
+    display: flex;
+    justify-content: space-between;
+}
+.tools {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--line);
+}
+.quantity {
+    color: var(--second-CR);
+}
+.profile {
+    display: flex;
+    margin: 15px 0;
 }
 .detail {
-    color: var(--Grayish-blue);
-    font-size: 15px;
+    margin: 0 0 5px;
+}
+.detail, .profile, .history {
+    font-weight: 300;
+}
+.profile-img {
+    width: 30px;
+    margin-right: 15px;
+}
+.profile-img img {
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 0px 0px 0px 2px #fff;
+}
+.create {
+    margin-right: 5px;
+}
+.profile {
+    display: flex;
+    margin: 15px 0 0;
+    align-items: center;
+}
+.name {
+    color: var(--White);
+}
+.icon {
+    display: flex;
+    margin: 0 5px 0 0;
+    align-items: center;
 }
